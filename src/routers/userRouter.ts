@@ -1,11 +1,11 @@
 import { Router } from "express";
+import * as userController from '../controllers/userController'
 
 const userRouter = Router();
 
 
-userRouter.get('/', (req, res) => {
-    res.json({ message: 'User route is working!' });
-});
+userRouter.post('/', userController.createUser);
+userRouter.post('/login', userController.loginUser)
 
 
 export default userRouter;
